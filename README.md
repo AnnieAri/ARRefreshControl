@@ -21,7 +21,9 @@
     
     //实现refresh方法
     - (void)refresh {
-    	/**这里实现tableView的刷新方法*/
+    	/**
+    	  这里实现tableView的刷新方法 可在异步请求网络数据回来调用下面两个方法
+    	*/
     	[self.tableView reloadData];
     	//调用控件结束刷新的方法
         [self.arRefreshControl endRefreshing];
