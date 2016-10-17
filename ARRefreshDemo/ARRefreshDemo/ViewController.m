@@ -14,7 +14,10 @@
 @end
 
 @implementation ViewController
-
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.arRefreshControl removeObserver];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"refreshDemo";

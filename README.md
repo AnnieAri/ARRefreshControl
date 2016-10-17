@@ -29,3 +29,13 @@
         [self.arRefreshControl endRefreshing];
     }
 ```
+#注意:
+如果使用该控件的控制器是被push或者modal的,则需要在控制器中试线如下方法
+控制器在pop或者dismiss的过程中 kvo不能正常注销
+
+```
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.arRefreshControl removeObserver];
+}
+```

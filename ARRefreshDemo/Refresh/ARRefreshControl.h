@@ -15,4 +15,6 @@ typedef NS_ENUM(NSUInteger, ARRefresgType) {
 @interface ARRefreshControl : UIControl
 /**加载完数据 结束刷新的方法*/
 - (void)endRefreshing;
+/**注销kvo*/
+- (void)removeObserver;
 @end

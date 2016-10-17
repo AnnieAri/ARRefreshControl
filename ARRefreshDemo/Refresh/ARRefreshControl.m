@@ -34,6 +34,10 @@
     //添加观察者
     [self.scrollView addObserver:self forKeyPath:@"contentOffset" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
 }
+#pragma mark - 注销kvo
+- (void)removeObserver {
+    [self.scrollView removeObserver:self forKeyPath:@"contentOffset" context:nil];
+}
 //观察者 监听事件
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     CGFloat contentInsetTop = self.scrollView.contentInset.top;
